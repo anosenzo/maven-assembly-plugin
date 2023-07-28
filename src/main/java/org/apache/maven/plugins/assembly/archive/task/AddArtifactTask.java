@@ -92,12 +92,24 @@ public class AddArtifactTask {
             artifact.setFile(moveArtifactSomewhereElse(configSource));
         }
 
+        if (unpack) {
+            LOGGER.info("getOutputDirectory(): params " + "- outputDirectory: '"
+                    + outputDirectory + "' - configSource: '"
+                    + configSource + "' - moduleProject: '"
+                    + moduleProject + "' - project: '"
+                    + project + "'");
+        }
+
         String destDirectory = AssemblyFormatUtils.getOutputDirectory(
                 outputDirectory,
                 configSource.getFinalName(),
                 configSource,
                 AssemblyFormatUtils.moduleProjectInterpolator(moduleProject),
                 AssemblyFormatUtils.artifactProjectInterpolator(project));
+
+        if (unpack) {
+            LOGGER.info("destDirectory: '" + destDirectory + "'");
+        }
 
         boolean fileModeSet = false;
         boolean dirModeSet = false;

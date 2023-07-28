@@ -28,7 +28,7 @@ under the License.
   </parent>
 
   <artifactId>maven-assembly-plugin</artifactId>
-  <version>3.6.0</version>
+  <version>3.6.0-MULE-SNAPSHOT</version>
   <packaging>maven-plugin</packaging>
 
   <name>Apache Maven Assembly Plugin</name>
